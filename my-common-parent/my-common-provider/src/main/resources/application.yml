@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 8001
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml   
   type-aliases-package: com.song.springcloud.entity                      
@@ -18,12 +18,12 @@ spring:
       max-total: 5                                 
       max-wait-millis: 200     
   application: 
-      name: order-service
+      name: order-service-provider
       
 eureka: 
   instance: 
-    instance-id: order-service-8002
+    instance-id: order-service-provider-8001
     prefer-ip-address: true # 访问路径可以显示 IP
   client: 
     service-url: 
-      defaultZone: http://localhost:9000/eureka/ # 注册中心访问地址    
+      defaultZone: http://localhost:9001/eureka/,http://localhost:9002/eureka/    #注册中心访问地址    

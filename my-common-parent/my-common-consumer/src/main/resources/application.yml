@@ -1,0 +1,13 @@
+server:
+  port: 7001
+spring:
+  application: 
+      name: common-consumer
+      
+eureka: 
+  instance: 
+    instance-id: common-consumer-7001
+    prefer-ip-address: true # 访问路径可以显示 IP
+  client: 
+    service-url: 
+      defaultZone: http://localhost:9001/eureka/,http://localhost:9002/eureka/  #注册中心访问地址    
