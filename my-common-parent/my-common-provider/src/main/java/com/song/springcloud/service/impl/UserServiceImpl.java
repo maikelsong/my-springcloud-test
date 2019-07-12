@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.song.springcloud.dao.UserDao;
+import com.song.springcloud.dao.UserMapper;
 import com.song.springcloud.entity.User;
 import com.song.springcloud.service.UserService;
  
@@ -18,31 +18,31 @@ import com.song.springcloud.service.UserService;
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
-	UserDao userDao;
+	UserMapper userMapper;
  
 	public User findById(int id) {
 		// TODO Auto-generated method stub
-		return userDao.findById(id);
+		return userMapper.findById(id);
 	}
  
 	public List<User> findAll(User user) {
 		// TODO Auto-generated method stub
-		return userDao.findAll(user);
+		return userMapper.findAll(user);
 	}
  
 	public Boolean update(User user) {
 		// TODO Auto-generated method stub
-		return userDao.update(user);
+		return userMapper.update(user);
 	}
  
 	public Boolean save(User user) {
 		// TODO Auto-generated method stub
-		return userDao.save(user);
+		return userMapper.save(user);
 	}
  
 	public Boolean delete(int id) {
 		// TODO Auto-generated method stub
-		return userDao.delete(id);
+		return userMapper.delete(id);
 	}
  
 }

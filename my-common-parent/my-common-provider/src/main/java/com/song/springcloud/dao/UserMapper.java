@@ -8,7 +8,7 @@ import com.song.springcloud.entity.User;
  
  
 @Mapper
-public interface UserDao {
+public interface UserMapper {
 	
 	public User findById(int id);
 	

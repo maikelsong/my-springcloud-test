@@ -6,11 +6,23 @@ public class User implements Serializable{
  
 	private static final long serialVersionUID = 1L;
 	
-	int id;
-	String name;
-	int age;
+	private int id;
+	private String name;
+	private int age;
 	
+	public User(){}
 	
+	/**
+	 * @param id
+	 * @param name
+	 * @param age
+	 */
+	public User(int id, String name, int age) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.age = age;
+	}
 	public int getId() {
 		return id;
 	}

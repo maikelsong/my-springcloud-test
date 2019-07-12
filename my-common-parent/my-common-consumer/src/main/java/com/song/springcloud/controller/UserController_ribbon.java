@@ -20,12 +20,9 @@ public class UserController_ribbon {
 	@Autowired
 	private RestTemplate restTemplate;
     
-    @RequestMapping(value="/user",method=RequestMethod.GET)
+    @RequestMapping(value="/user0",method=RequestMethod.GET)
 	public List<User> findAll(User user) {
-		
-    	List list = this.restTemplate.getForObject("http://ORDER-SERVICE-PROVIDER/user", List.class);
-
-		return list;
+    	return this.restTemplate.getForObject("http://ORDER-SERVICE-PROVIDER/user", List.class);
 	}
 		
  

@@ -13,6 +13,8 @@ package com.song.springcloud.service;
 import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,18 +30,18 @@ import com.song.springcloud.entity.User;
 public interface UserServiceClient {
 	
 	@RequestMapping(value="/user/{id}",method=RequestMethod.GET)
-    public User findById(@RequestParam(value="id")int id)  ;
+    public User findById(@PathVariable(value = "id")int id)  ;
     
-    @RequestMapping(value="/user",method=RequestMethod.GET)
+	@RequestMapping(value="/user",method=RequestMethod.GET)
 	public List<User>findAll(@RequestParam(value="user")User user)  ;
 	
     @RequestMapping(value="/user",method=RequestMethod.POST)
-	public Boolean update(@RequestParam(value="user") User user)  ;
+	public Boolean update(@RequestBody User user)  ;
     
     @RequestMapping(value="/user",method=RequestMethod.PUT)
-	public Boolean save(@RequestParam(value="user") User user)  ;
+	public Boolean save(@RequestBody User user)  ;
     
     @RequestMapping(value="/user/{id}",method=RequestMethod.DELETE)
-    public Boolean delete(@RequestParam(value="id")int id) ;
+    public Boolean delete(@PathVariable(value="id")int id) ;
  
 }
